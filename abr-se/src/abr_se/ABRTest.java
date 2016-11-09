@@ -2,7 +2,7 @@ package abr_se;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Test;
 
 public class ABRTest {
@@ -33,5 +33,16 @@ public class ABRTest {
 		abr.insert(5);
 		assertFalse("abr should contain 5,3,8", abr.isEmpty());
 		assertEquals("abr should contain 5,3,8", abr.nbElements(), 3);
+	}
+	
+	@Test
+	public void testToList() {
+		ABR abr = new ABR();
+		abr.insert(5);
+		abr.insert(3);
+		abr.insert(8);
+		List<int> list = new List<int>();
+		abr.toList(list);
+		assertEquals(list.toArray(), [3,5,8]);
 	}
 }
