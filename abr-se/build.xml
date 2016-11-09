@@ -1,11 +1,11 @@
-<project name="FileSystem" basedir="."  default="run">
+<project name="ABR" basedir="."  default="run">
 	<property name="src.dir" value="src"/>
 	<property name="bin.dir" value="bin"/>
 	<property name="jar.dir" value="jar"/>
 	<property name="lib.dir" value="lib"/>
 	<property name="report.dir" value="junitreport"/>
 
-	<property name="main-class" value="fatfs.Main"/>
+	<property name="main-class" value="abr_se.ABR"/>
 
 	<path id="classpath">
 		<fileset dir="${lib.dir}" includes="**/*.jar"/>
