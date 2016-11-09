@@ -52,4 +52,8 @@ public class ABR {
 	public boolean isEmpty() {
 		return root == null;
 	}
+	
+	public int nbElements() {
+		return nbElements;
+	}
 }
