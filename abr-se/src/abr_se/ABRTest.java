@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 public class ABRTest {
+	/**
+    * Test simple de fonctionement
+    */
 	@Test
 	public void testSimple() {
 		ABR abr = new ABR();
@@ -23,6 +26,9 @@ public class ABRTest {
 		assertEquals("abr should contain 5,0,8", abr.nbElements(), 3);
 	}
 	
+	/**
+    * Test du bon comportement face aux doublons
+    */
 	@Test
 	public void testDoublons() {
 		ABR abr = new ABR();
@@ -36,6 +42,9 @@ public class ABRTest {
 		assertEquals("abr should contain 5,3,8", abr.nbElements(), 3);
 	}
 	
+	/**
+    * Test of the fonction {@link abr_se.ABR#toList(List l)}
+    */
 	@Test
 	public void testToList() {
 		ABR abr = new ABR();
@@ -51,16 +60,23 @@ public class ABRTest {
 		assertEquals(list.toArray(), result.toArray());
 	}
 	
+	/**
+    * Test of the fonction {@link abr_se.ABR#contains(int value)}
+    */
 	@Test
 	public void testContains() {
 		ABR abr = new ABR();
 		abr.insert(5);
 		abr.insert(3);
+		abr.insert(6);
+		abr.insert(2);
+		abr.insert(9);
 		abr.insert(8);
 		assertTrue(abr.contains(5));
 		assertTrue(abr.contains(3));
 		assertTrue(abr.contains(8));
 		assertFalse(abr.contains(10));
 		assertFalse(abr.contains(0));
+		assertFalse(abr.contains(7));
 	}
 }
