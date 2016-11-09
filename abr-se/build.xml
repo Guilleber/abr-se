@@ -3,6 +3,7 @@
 	<property name="bin.dir" value="bin"/>
 	<property name="jar.dir" value="jar"/>
 	<property name="lib.dir" value="lib"/>
+	<property name="doc.dir" value="doc"/>
 	<property name="report.dir" value="junitreport"/>
 
 	<property name="main-class" value="abr_se.ABR"/>
@@ -16,6 +17,12 @@
 		<delete dir="${bin.dir}"/>
 		<delete dir="${jar.dir}"/>
 		<delete dir="${report.dir}"/>
+	</target>
+	
+	<target name="doc" description="generate documentation">
+		<delete dir="${doc.dir}"/>
+		<mkdir dir="${doc.dir}"/>
+		<javadoc sourcepath="${src.dir}" destdir="${doc.dir}" classpathref="classpath"/>
 	</target>
 
 	<target name="compile" depends="clean">
