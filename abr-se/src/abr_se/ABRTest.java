@@ -3,6 +3,7 @@ package abr_se;
 import static org.junit.Assert.*;
 
 import java.util.List;
+import java.util.ArrayList;
 import org.junit.Test;
 
 public class ABRTest {
@@ -41,8 +42,12 @@ public class ABRTest {
 		abr.insert(5);
 		abr.insert(3);
 		abr.insert(8);
-		List<int> list = new List<int>();
+		List<Integer> list = new ArrayList<Integer>();
 		abr.toList(list);
-		assertEquals(list.toArray(), [3,5,8]);
+		List<Integer> result = new ArrayList<Integer>();
+		result.add(3);
+		result.add(5);
+		result.add(8);
+		assertEquals(list.toArray(), result.toArray());
 	}
 }

@@ -1,6 +1,7 @@
 package abr_se;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class ABR {
 	public class Node {
@@ -57,5 +58,24 @@ public class ABR {
 	
 	public int nbElements() {
 		return nbElements;
+	}
+	
+	public void toList(List<Integer> l) {
+		if(root != null)
+			toList(l, root);
+	}
+	
+	private void toList(List<Integer> l, Node node) {
+		if(node.childLeft != null) {
+			List<Integer> listLeft = new ArrayList<Integer>();
+			toList(listLeft, node.childLeft);
+			l.addAll(listLeft);
+		}
+		l.add(node.getValue());
+		if(node.childRight != null) {
+			List<Integer> listRight = new ArrayList<Integer>();
+			toList(listRight, node.childRight);
+			l.addAll(listRight);
+		}
 	}
 }
