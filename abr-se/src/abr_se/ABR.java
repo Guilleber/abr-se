@@ -78,4 +78,22 @@ public class ABR {
 			l.addAll(listRight);
 		}
 	}
+	
+	public boolean contains(int value) {
+		return contains(value, root);
+	}
+	
+	private boolean contains(int value, Node node) {
+		if(node.getValue() == value)
+			return true;
+		else {
+			boolean bl = false;
+			boolean br = false;
+			if(node.childLeft != null)
+				bl = contains(value, node.childLeft);
+			if(node.childRight != null)
+				br = contains(value, node.childRight);
+			return bl || br;
+		}
+	}
 }

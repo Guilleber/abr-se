@@ -50,4 +50,17 @@ public class ABRTest {
 		result.add(8);
 		assertEquals(list.toArray(), result.toArray());
 	}
+	
+	@Test
+	public void testContains() {
+		ABR abr = new ABR();
+		abr.insert(5);
+		abr.insert(3);
+		abr.insert(8);
+		assertTrue(abr.contains(5));
+		assertTrue(abr.contains(3));
+		assertTrue(abr.contains(8));
+		assertFalse(abr.contains(10));
+		assertFalse(abr.contains(0));
+	}
 }
