@@ -23,6 +23,10 @@ public class ABR {
 	
 	ABR() {}
 	
+	/**
+    * Adds the specified element to this ABR if it is not already present
+	* @param value element to be inserted
+    */
 	public void insert(int value) {
 		if(root == null) {
 			root = new Node(value);
@@ -52,14 +56,26 @@ public class ABR {
 		}
 	}
 	
+	/**
+    * Returns true if this ABR contains no elements.
+	* @return true if this ABR contains no elements
+    */
 	public boolean isEmpty() {
 		return root == null;
 	}
 	
+	/**
+    * Returns the number of element in this ABR
+	* @return number of elements in this ABR
+    */
 	public int nbElements() {
 		return nbElements;
 	}
 	
+	/**
+    * Fill a list with the elements in this ABR in ascending order.
+	* @param l the list into which the elements of the ABR are to be stored
+    */
 	public void toList(List<Integer> l) {
 		if(root != null)
 			toList(l, root);
@@ -79,6 +95,11 @@ public class ABR {
 		}
 	}
 	
+	/**
+    * Returns true if this ABR contains the specified element.
+	* @param value element whose presence in this ABR is to be tested
+	* @return true if this ABR contains the specified element.
+    */
 	public boolean contains(int value) {
 		return contains(value, root);
 	}
