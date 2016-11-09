@@ -21,4 +21,17 @@ public class ABRTest {
 		assertFalse("abr should contain 5,0,8", abr.isEmpty());
 		assertEquals("abr should contain 5,0,8", abr.nbElements(), 3);
 	}
+	
+	@Test
+	public void testDoublons() {
+		ABR abr = new ABR();
+		abr.insert(5);
+		abr.insert(3);
+		abr.insert(8);
+		assertFalse("abr should contain 5,3,8", abr.isEmpty());
+		assertEquals("abr should contain 5,3,8", abr.nbElements(), 3);
+		abr.insert(5);
+		assertFalse("abr should contain 5,3,8", abr.isEmpty());
+		assertEquals("abr should contain 5,3,8", abr.nbElements(), 3);
+	}
 }
